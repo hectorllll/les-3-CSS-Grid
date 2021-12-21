@@ -1,1 +1,73 @@
 /*Maak hier jouw CSS!*/
+* {
+    margin: 0;
+    padding: 0;
+}
+.container {
+    display: grid;
+    grid-gap: 16px 16px;
+    background-color: rgb(252, 238, 240);
+    color: white;
+    padding: 15px;
+    /*grid-template-columns: 1fr 1fr 1fr;*/
+    grid-template-rows: 50px auto repeat(5, 50px);
+    grid-template-areas:
+        "header"
+        "main"
+        "aside-1"
+        "aside-2"
+        "aside-3"
+        "."
+        "footer"
+}
+
+
+@media screen and (min-width: 576px) {
+
+.container{
+    display: grid;
+    grid-gap: 16px 16px;
+    background-color: rgb(252, 238, 240);
+    color: white;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50px 174px 100px auto 50px;
+    grid-template-areas:
+        "header aside-1 aside-1"
+        "main aside-1 aside-1"
+        "main aside-2 aside-3"
+        "main aside-2 ."
+        "footer footer footer"
+;
+}
+}
+.grid-item {
+    background-color: rgb(157, 27, 53);
+    border: rgb(70, 12, 23);
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#header {
+    grid-area: header;
+}
+
+#main {
+    grid-area: main;
+}
+#aside-1 {
+    grid-area: aside-1;
+}
+
+#aside-2{
+    grid-area: aside-2;
+}
+
+#aside-3 {
+    grid-area: aside-3;
+}
+#footer {
+    grid-area: footer;
+}
